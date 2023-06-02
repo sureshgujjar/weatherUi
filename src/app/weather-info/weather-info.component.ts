@@ -9,7 +9,11 @@ import { WeatherApiService } from 'src/service/weather-api.service';
 })
 export class WeatherInfoComponent implements OnInit {
   lat:string="";
-  log:string="";
+  lon:string="";
+  // weatherInfo
+  // {
+    
+  // }
   constructor(private weatherService:WeatherApiService,private router:ActivatedRoute) {
   
     
@@ -17,8 +21,16 @@ export class WeatherInfoComponent implements OnInit {
   ngOnInit(): void {
       this.router.snapshot.params['city']
       this.weatherService.fetchDetail( this.router.snapshot.params['city'],this.router.snapshot.params['state']).subscribe(
-         (response:any)=>{console.log(response[0].lat+"  "+response[0].lon)}
-      );     
+         (response:any)=>{this.lat=response[0].lat;this.lon=response[0].lon}
+      ).add(()=>
+       {
+           this.weatherService.getWeather(this.lat,this.lon).subscribe(
+            (data:any)=>console.log(data)
+           );
+
+       } 
+      );
+
   }
 
 }
