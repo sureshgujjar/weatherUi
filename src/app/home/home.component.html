@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+{{detailForm.value|json}}
+<label class="alert alert-danger"style="color:red" *ngIf="cityRef.errors?.['required']&&cityRef?.['touched']">City is required</label>
+<label class="alert alert-danger"style="color:red" *ngIf="stateRef.errors?.['required']&&stateRef?.['touched']">State is required</label>
+<body>
+    
+    <div id="card">
+        <div id="card-content">
+            <div id="card-title">
+                <h2>Weather App</h2>
+                <!-- <div class="underline-title"></div> -->
+            </div>
+            <form #detailForm="ngForm" class="form" (ngSubmit)="sendDetail(detailForm)">
+                <label for="city" style="padding-top:13px">
+                    &nbsp;City
+                </label>
+                <input #cityRef="ngModel" id="city" class="form-content" type="text" name="city" [(ngModel)]="formData.city"  required />
+
+                <div class="form-border"></div>
+                <label for="state" style="padding-top:22px">&nbsp;State
+                </label>
+                <input #stateRef="ngModel" id="state" class="form-content" type="text" name="state"  [(ngModel)]="formData.state" required />
+                <div class="form-border"></div>
+                <button [disabled]="detailForm.invalid" id="submit-btn" type="submit">ENTER</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
