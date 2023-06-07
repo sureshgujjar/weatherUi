@@ -7,7 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './home/home.component';
 import { FormsModule } from '@angular/forms';
 import { WeatherInfoComponent } from './weather-info/weather-info.component';
-
+import { AccordionModule } from 'ngx-bootstrap/accordion';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,6 +20,7 @@ import { WeatherInfoComponent } from './weather-info/weather-info.component';
     BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
+    AccordionModule
   ],
   providers: [],
   bootstrap: [AppComponent]

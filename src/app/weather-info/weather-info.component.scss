@@ -71,19 +71,19 @@ p {
   font-size: 25px;
 }
 
-#day {
+#state {
   font-weight: 700;
   font-size: 25px;
   margin-top: 18px;
 }
 
-#date {
+#timezone {
   font-weight: 500;
   font-size: 20px;
   margin-top: 4px;
 }
 
-#time {
+#date {
   font-weight: 400;
   font-size: 18px;
   margin-top: 8px;
@@ -195,20 +195,4 @@ p {
   font-size: 16px;
   font-weight: 400;
   margin-left: 40px;
-}
-
-.watermark-link {
-  text-decoration:none;
-  color:#b0bec5;
-}
-
-.watermark-link:hover {
-  color:white;
-  text-decoration:none;
-}
-
-.watermark {
-  margin-top:10px;
-  text-align:center;
-  font-weight:400;
 }
